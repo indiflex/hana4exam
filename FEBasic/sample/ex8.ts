@@ -9,3 +9,5 @@ for (let i = 10; i < 15; i++) debo(i); // 15 출력
 
 const thro = throttle((a: number) => console.log(a + 1), 500);
 for (let i = 10; i < 15; i++) thro(i); // 11 출력
+
+//PR test - hoinlee
