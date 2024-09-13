@@ -38,3 +38,19 @@ assert.notStrictEqual(
   newKim.oo.addr.city,
   'Not Pass3: city가 다르지 않아요!'
 );
+newKim.yy = function () {
+  console.log('Changed!');
+};
+newKim.yyy = () => console.log('changed arrow');
+assert.notStrictEqual(kim.yy, newKim.yy);
+assert.notStrictEqual(kim.yyy, newKim.yyy);
+
+newKim.zs = new Set();
+assert.notStrictEqual(kim.zs, newKim.zs);
+newKim.zws = new WeakSet();
+assert.notStrictEqual(kim.zws, newKim.zws);
+
+newKim.zm = new Map();
+assert.notStrictEqual(kim.zm, newKim.zm);
+newKim.zwm = new WeakMap();
+assert.notStrictEqual(kim.zwm, newKim.zwm);

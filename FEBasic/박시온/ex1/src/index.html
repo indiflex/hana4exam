@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Main</title>
+  </head>
+
+  <body class="flex flex-col min-h-screen">
+    <nav class="flex items-center justify-between flex-wrap p-3">
+      <div
+        class="flex items-center flex-shrink-0 mr-6  pl-3 pr-3 bg-gray-100 rounded-lg"
+      >
+        <span class="p-2 font-bold text-xl text-green-500">
+          <i class="fa-solid fa-book-bookmark pr-1"></i>BookMark</span
+        >
+        <span class=""></span>
+      </div>
+      <div
+        class="w-full block flex-grow sm:flex sm:items-center sm:w-auto mt-2"
+      >
+        <div class="text-sm ml-auto flex">
+          <a href="https://github.com/Sionparadox" class="topLink mr-6">
+            GitHub Repo.
+          </a>
+          <div id="userInfo" class="flex mr-2">
+            <img
+              src="https://avatars.githubusercontent.com/u/99112680?s=64&v=4"
+              class="w-9 h-9 rounded-full"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main
+      class="flex-grow w-full mx-auto border-4 rounded-md border-gray-200 flex flex-row flex-start flex-wrap p-1"
+    >
+      <div class="bookmarkArea overflow-auto">
+        <h2 class="bookTitle ">BookmarkBookmarkBookmark</h2>
+        <ul class="p-1">
+          <li class="w-full h-24 border-2 border-white my-2">
+            <div class="container grid grid-cols-[auto_1fr_auto] h-24">
+              <div class="flex items-center justify-center w-20 h-full">
+                <img
+                  class="w-12 h-12 rounded-sm"
+                  src="https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png"
+                />
+              </div>
+              <div class="py-5 flex flex-col justify-center overflow-hidden">
+                <p
+                  class="font-bold whitespace-nowrap overflow-hidden text-ellipsis truncate"
+                >
+                  네이버
+                </p>
+                <p class="whitespace-nowrap text-ellipsis truncate">
+                  네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요
+                </p>
+              </div>
+              <div class="flex items-center justify-center w-12 h-full">
+                <button><i class="fa-solid fa-gear"></i></button>
+              </div>
+            </div>
+          </li>
+
+          <li class="w-full h-24 border-2 border-white my-2">
+            <div class="container grid grid-cols-[auto_1fr_auto] h-24">
+              <div class="flex items-center justify-center w-20 h-full">
+                <img
+                  class="w-12 h-12 rounded-sm"
+                  src="//t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
+                />
+              </div>
+              <div class="py-5 flex flex-col justify-center overflow-hidden">
+                <p
+                  class="font-bold whitespace-nowrap overflow-hidden text-ellipsis truncate"
+                >
+                  kakao
+                </p>
+                <p class="whitespace-nowrap text-ellipsis truncate">
+                  기술과 사람으로 더 나은 세상을 만듭니다
+                </p>
+              </div>
+              <div class="flex items-center justify-center w-12 h-full">
+                <button><i class="fa-solid fa-gear"></i></button>
+              </div>
+            </div>
+          </li>
+
+          <li class="w-full h-24 border-2 border-white my-2">
+            <div class="container grid grid-cols-[auto_1fr_auto] h-24">
+              <div class="flex items-center justify-center w-20 h-full">
+                <img
+                  class="w-12 h-12 rounded-sm"
+                  src="https://www.youtube.com/img/desktop/yt_1200.png"
+                />
+              </div>
+              <div class="py-5 flex flex-col justify-center overflow-hidden">
+                <p
+                  class="font-bold whitespace-nowrap overflow-hidden text-ellipsis truncate"
+                >
+                  YouTube
+                </p>
+                <p class="whitespace-nowrap text-ellipsis truncate">
+                  YouTube에서 마음에 드는 동영상과 음악을 감상하고, 직접 만든
+                  콘텐츠를 업로드하여 친구, 가족뿐 아니라 전 세계 사람들과
+                  콘텐츠를 공유할 수 있습니다.
+                </p>
+              </div>
+              <div class="flex items-center justify-center w-12 h-full">
+                <button><i class="fa-solid fa-gear"></i></button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="flex justify-end mr-2">
+          <button class="btn-green">+Add Mark</button>
+        </div>
+      </div>
+
+      <div class="bookmarkArea overflow-auto">
+        <h2 class="bookTitle ">Study</h2>
+        <ul class="p-1">
+          <li class="w-full h-24 border-2 border-white my-2">
+            <div class="container grid grid-cols-[auto_1fr_auto] h-24">
+              <div class="flex items-center justify-center w-20 h-full">
+                <img
+                  class="w-12 h-12 rounded-sm"
+                  src="https://tailwindcss.com/_next/static/media/social-card-large.a6e71726.jpg"
+                />
+              </div>
+              <div class="py-5 flex flex-col justify-center overflow-hidden">
+                <p
+                  class="font-bold whitespace-nowrap overflow-hidden text-ellipsis truncate"
+                >
+                  Tailwind CSS - Rapidly build modern websites without ever
+                  leaving your HTML.
+                </p>
+                <p class="whitespace-nowrap text-ellipsis truncate">
+                  Tailwind CSS is a utility-first CSS framework for rapidly
+                  building modern websites without ever leaving your HTML.
+                </p>
+              </div>
+              <div class="flex items-center justify-center w-12 h-full">
+                <button><i class="fa-solid fa-gear"></i></button>
+              </div>
+            </div>
+          </li>
+
+          <li class="w-full h-24 border-2 border-white my-2">
+            <div class="container grid grid-cols-[auto_1fr_auto] h-24">
+              <div class="flex items-center justify-center w-20 h-full">
+                <img
+                  class="w-12 h-12 rounded-sm"
+                  src="https://assets.vercel.com/image/upload/front/nextjs/twitter-card.png"
+                />
+              </div>
+              <div class="py-5 flex flex-col justify-center overflow-hidden">
+                <p
+                  class="font-bold whitespace-nowrap overflow-hidden text-ellipsis truncate"
+                >
+                  Next.js by Vercel - The React Framework
+                </p>
+                <p class="whitespace-nowrap text-ellipsis truncate">
+                  Next.js by Vercel is the full-stack React framework for the
+                  web.
+                </p>
+              </div>
+              <div class="flex items-center justify-center w-12 h-full">
+                <button><i class="fa-solid fa-gear"></i></button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="flex justify-end mr-2">
+          <button class="btn-green">+Add Mark</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="w-full max-w-screen-xl mx-auto items-center">
+      <div class="text-sm text-gray-500 text-center">ⓒ Hanaro 2024</div>
+    </footer>
+  </body>
+</html>

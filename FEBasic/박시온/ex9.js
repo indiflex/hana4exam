@@ -17,29 +17,28 @@ function bill(tableNo) {
         : calcSurtax(MENU[food].price);
     },
     printBill() {
-      const PAPER = '=====================';
-      const LINE = '---------------------';
-      console.log('Table. ', tableNo);
-      console.log(PAPER);
+      const PAPER = '=====================\n';
+      const LINE = '---------------------\n';
+      let ret = 'Table. ' + tableNo + '\n' + PAPER;
       orderList.forEach((food) => {
         const { price, taxfree } = MENU[food];
-        console.log('*' + food);
-        printLine`공급가액:${price}`;
-        printLine`부가세액:${taxfree ? 0 : calcSurtax(price)}`;
-        console.log(LINE);
+        ret += '*' + food + '\n';
+        ret += priceLine`공급가액:${price}`;
+        ret += priceLine`부가세액:${taxfree ? 0 : calcSurtax(price)}`;
+        ret += LINE;
       });
-      printLine`주문합계:${totalPrice.price}`;
-      printLine`주문합계:${totalPrice.surtax}`;
-      console.log(PAPER + '\n');
+      ret += priceLine`주문합계:${totalPrice.price}`;
+      ret += priceLine`주문합계:${totalPrice.surtax}`;
+      ret += PAPER + '\n';
+      console.log(ret);
     },
   };
 }
 
 const calcSurtax = (n) => Math.round((n / 1.1) * 0.1);
-const printLine = ([label, _], price) =>
-  console.log(`${label}${price.toLocaleString().padStart(9)}원`);
+const priceLine = ([label, _], price) =>
+  `${label}${price.toLocaleString().padStart(9)}원\n`;
 
-module.exports = { bill };
 const table1 = bill(1);
 table1.order('짜장');
 table1.order('짬뽕');

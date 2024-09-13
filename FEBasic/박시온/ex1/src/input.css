@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input.inp {
+    @apply px-2 py-1 w-full border rounded-md focus:outline-none focus:ring-0 focus:border-blue-500;
+  }
+}
+
+@layer components {
+  .btn-green {
+    @apply rounded-md px-4 py-2 border border-spacing-1.5 shadow-md active:ring text-white text-sm bg-green-500 active:ring-green-500 active:bg-gray-200 active:text-green-500;
+  }
+}
+
+.topLink {
+  @apply block sm:inline-block font-bold hover:text-green-500;
+}
+
+.bookmarkArea {
+  @apply bg-green-200 rounded-lg min-w-[16rem] max-w-[20rem] m-1;
+}
+
+.bookmarkArea-hide {
+  @apply bg-white rounded-lg min-w-[16rem] max-w-[20rem] m-1;
+}
+
+.makeBookmark {
+  @apply border-2 border-white m-1 grid grid-rows-3 hover:border-blue-400;
+}
+
+.bookmarkBtn {
+  @apply bg-white w-full h-full rounded-lg active:bg-gray-200 active:scale-110;
+}
+
+.bookTitle {
+  @apply font-bold text-center text-2xl whitespace-nowrap text-ellipsis p-8 truncate;
+}

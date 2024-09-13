@@ -1,26 +1,31 @@
-// const POST_URL = 'https://jsonplaceholder.typicode.com/posts';
+const POST_URL = 'https://jsonplaceholder.typicode.com/posts';
 
-// type CT = { postId: number; id: number; email: string; body: string };
-// type PT = { userId: number; id: number; title: string; body: string };
-// type RT = { postId?: number; title?: string; comments?: CT[] };
-// export async function getPosts(userId: number | string): Promise<void> {
-//   const result: RT[] = [];
-//   const userPostById = await myFetch(`?userId=${userId}`);
-//   for (const post of userPostById) {
-//     const tmp: RT = {};
-//     tmp.postId = post.id;
-//     tmp.title = post.title;
-//     tmp.comments = await myFetch(`/${post.id}/comments`);
-//   }
-// }
+type CT = {
+  postId: number;
+  id: number;
+  email: string;
+  name?: string;
+  body: string;
+};
+type PT = { userId: number; id: number; title: string; body: string };
+type RT = { postId?: number; title?: string; comments?: CT[] };
 
-// const myFetch = async (path: string): Promise<PT[]> => {
-//   const res = await fetch(`${POST_URL}${path}`);
-//   const (await res.json()) as PT[];
-// };
+export async function getPosts(userId: number | string): Promise<RT[]> {
+  const userPostById: PT[] = await getFetch(`?userId=${userId}`);
+  const commentNotName = (await Promise.all(
+    userPostById.map((post) => getFetch(`/${post.id}/comments`))
+  )) as CT[][];
 
-// getPosts(1);
-// async function print() {
-//   const ans = await myFetch('?userId=1');
-// }
-// print();
+  return commentNotName.map((cmtArr, idx) => {
+    return {
+      postId: userPostById[idx].id,
+      title: userPostById[idx].title,
+      comments: cmtArr.map(({ name, ...rest }) => rest),
+    };
+  });
+}
+
+const getFetch = async <T>(path: string): Promise<T> => {
+  const res = await fetch(`${POST_URL}${path}`);
+  return res.json() as T;
+};
