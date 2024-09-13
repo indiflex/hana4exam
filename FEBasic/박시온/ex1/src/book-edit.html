@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>bookmark</title>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <nav class="flex items-center justify-between flex-wrap p-3">
+      <div
+        class="flex items-center flex-shrink-0 mr-6  pl-3 pr-3 bg-gray-100 rounded-lg"
+      >
+        <span class="p-2 font-bold text-xl text-green-500">
+          <i class="fa-solid fa-book-bookmark pr-1"></i>BookMark</span
+        >
+        <span class=""></span>
+      </div>
+      <div
+        class="w-full block flex-grow sm:flex sm:items-center sm:w-auto mt-2"
+      >
+        <div class="text-sm ml-auto flex">
+          <a href="https://github.com/Sionparadox" class="topLink mr-6"> GitHub Repo. </a>
+          <div id="userInfo" class="flex mr-2">
+            <a href="register.html" class="topLink"> SignUp </a>
+            <span class="pr-3 pl-3 font-bold">|</span>
+            <a href="#" class="topLink"> SignIn </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main
+      class="flex-grow w-full mx-auto border-4 rounded-md border-gray-200 flex flex-row flex-start flex-wrap p-1"
+    >
+      <div class="bookmarkArea overflow-auto">
+        <div class="makeBookmark">
+          <div class="bg-white rounded-md m-2 p-2">
+            <input type="url" placeholder="http://www.naver.com" class="w-full h-full focus:outline-none" />
+          </div>
+          <div class="m-2 p-2 flex items-center"><input type="checkbox" class="w-6 h-6"/><label class="pl-3 font-semibold">이동 시 자동 삭제</div>
+          <div class="grid grid-cols-4 m-2">
+            <div class="col-start-3 p-1">
+              <button type="button" class="col-start-3 bookmarkBtn"><i class="fa-solid fa-rotate-left"></i></button>
+            </div>
+            <div class="p-1">
+              <button type="button" class=" bookmarkBtn"><i class="fa-regular fa-floppy-disk"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">There is no marks.</div>
+      </div>
+
+      <div class="bookmarkArea-hide">
+        <div >
+          <button type="button" class="btn-green">+ Add Book</button>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="w-full max-w-screen-xl mx-auto items-center">
+      <div class="text-sm text-gray-500 text-center">ⓒ Hanaro 2024</div>
+    </footer>
+
+  </body>
+</html>

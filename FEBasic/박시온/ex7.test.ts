@@ -2,7 +2,7 @@ import assert from 'assert';
 import { getPosts } from './ex7';
 
 async function test(userId: string | number) {
-  const posts = await getPosts(userId);
+  const posts = (await getPosts(userId)) as Array<any>;
 
   assert.strictEqual(posts?.length, 10);
   assert.strictEqual(posts?.at(-1)?.comments?.length, 5);
@@ -63,8 +63,5 @@ async function test(userId: string | number) {
       },
     ],
   });
-
-  // 추가 테스트 코드를 작성하시오.
 }
-
 test(1);
